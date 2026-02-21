@@ -1,9 +1,21 @@
 import React, { useState } from "react";
-import { Briefcase, Calendar, MapPin, BookOpen, ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, MapPin, BookOpen, Award } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import publicationCert from "../../assets/publication.jpg"; 
 
 export const Experience = () => {
   const [open, setOpen] = useState(false);
+  const [modalType, setModalType] = useState<"details" | "certificate">("details");
+
+  const openDetails = () => {
+    setModalType("details");
+    setOpen(true);
+  };
+
+  const openCertificate = () => {
+    setModalType("certificate");
+    setOpen(true);
+  };
 
   return (
     <section
@@ -107,20 +119,19 @@ export const Experience = () => {
 
               <div className="flex gap-4 flex-wrap">
                 <button
-                  onClick={() => setOpen(true)}
+                  onClick={openDetails}
                   className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
                 >
                   View Publication Details
                 </button>
 
-                <a
-                  href="https://gisscience.net/VOLUME-8-ISSUE-6-2021/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                {/* ✅ Certificate button */}
+                <button
+                  onClick={openCertificate}
                   className="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition-all flex items-center gap-2"
                 >
-                  Official Page <ExternalLink size={16} />
-                </a>
+                  Certificate of Publication <Award size={16} />
+                </button>
               </div>
             </div>
           </motion.div>
@@ -134,39 +145,67 @@ export const Experience = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)} // ✅ click outside closes
             >
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.92, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="bg-gray-900 max-w-2xl w-full p-8 rounded-2xl shadow-2xl border border-gray-800"
+                exit={{ scale: 0.92, opacity: 0 }}
+                transition={{ duration: 0.25 }}
+                className="bg-gray-900 w-full max-w-4xl p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-800"
+                onClick={(e) => e.stopPropagation()} // ✅ prevent closing when clicking inside
               >
-                <h2 className="text-2xl font-bold mb-4 text-white">
-                  Instant Augmented Reality Converter Tool
-                </h2>
+                {modalType === "details" ? (
+                  <>
+                    <h2 className="text-2xl font-bold mb-4 text-white">
+                      Instant Augmented Reality Converter Tool
+                    </h2>
 
-                <div className="space-y-4 text-gray-300 text-sm leading-relaxed">
-                  <p>
-                    Published in a Scopus-indexed international journal (Paper ID: <strong>GSJ4300</strong>).
-                  </p>
+                    <div className="space-y-4 text-gray-300 text-sm leading-relaxed">
+                      <p>
+                        Published in a Scopus-indexed international journal (Paper ID:{" "}
+                        <strong>GSJ4300</strong>).
+                      </p>
 
-                  <p>
-                    Built a web app allowing users to upload OBJ models, apply textures,
-                    and export into <strong>GLTF</strong> (Android) and <strong>USDZ</strong> (iOS).
-                  </p>
+                      <p>
+                        Built a web app allowing users to upload OBJ models, apply textures,
+                        and export into <strong>GLTF</strong> (Android) and{" "}
+                        <strong>USDZ</strong> (iOS).
+                      </p>
 
-                  <div className="bg-indigo-900/40 p-4 rounded-xl mt-4 border border-indigo-700">
-                    <strong className="text-white">Tools & Tech Used:</strong>
-                    <ul className="list-disc list-inside mt-2 space-y-1">
-                      <li>JavaScript, Node.js</li>
-                      <li>OBJ Models & Local Server Hosting</li>
-                      <li>ARCore & ARKit</li>
-                      <li>GLTF & USDZ</li>
-                      <li>Depth Sensing Camera</li>
-                    </ul>
-                  </div>
-                </div>
+                      <div className="bg-indigo-900/40 p-4 rounded-xl mt-4 border border-indigo-700">
+                        <strong className="text-white">Tools & Tech Used:</strong>
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                          <li>JavaScript, Node.js</li>
+                          <li>OBJ Models & Local Server Hosting</li>
+                          <li>ARCore & ARKit</li>
+                          <li>GLTF & USDZ</li>
+                          <li>Depth Sensing Camera</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="text-2xl font-bold mb-4 text-white">
+                      Certificate of Publication
+                    </h2>
+
+                    {/* ✅ Certificate image display */}
+                    <div className="bg-black/30 border border-gray-800 rounded-xl overflow-hidden">
+                      <img
+                        src={publicationCert}
+                        alt="Publication Certificate"
+                        className="w-full h-auto max-h-[70vh] object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <p className="text-gray-400 text-sm mt-3">
+                      
+                    </p>
+                  </>
+                )}
 
                 <div className="mt-6 text-right">
                   <button

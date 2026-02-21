@@ -5,8 +5,8 @@ import { motion, AnimatePresence, useScroll, useSpring } from "motion/react";
 const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
   { name: "Experience & Publication", href: "#experience" },
+  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
 

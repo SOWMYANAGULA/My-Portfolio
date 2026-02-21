@@ -99,7 +99,7 @@ export const Hero = () => {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
             <a
-              href="#projects"
+              href="#experience"
               className="px-8 py-4 bg-fuchsia-600 text-white rounded-lg font-semibold shadow-[0_0_18px_rgba(236,72,153,0.22)] hover:shadow-[0_0_26px_rgba(236,72,153,0.35)] hover:bg-fuchsia-700 transition"
             >
               View My Work
