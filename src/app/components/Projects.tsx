@@ -56,6 +56,8 @@ const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1080",
     tags: ["Selenium", "Java", "Python", "TestNG", "JUnit", "POM", "XPath", "GitHub"],
+    github: "https://github.com/SOWMYANAGULA/iCARE-Intelligent-Clinical-Assignment-and-Record-Entry-System",
+    live: "",
   },
   {
     title: "A Comprehensive Study on SNMDs via Online Social Media Mining",
@@ -65,6 +67,8 @@ const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1080",
     tags: ["Machine Learning", "Social Media Mining", "SNMDD", "Tensor Model (STM)", "User Study"],
+    github: "https://github.com/SOWMYANAGULA/A-Comprehensive-Study-on-SNMDs-via-Online-Social-Media-Mining",
+    live: "",
   },
 ];
 
@@ -148,7 +152,7 @@ export const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* ✅ Logos instead of tag pills */}
+                {}
                 <div className="flex flex-wrap gap-4 mt-2">
                   {project.tags.map((tag) => {
                     const logo = tagLogos[tag];
@@ -181,7 +185,7 @@ export const Projects = () => {
 
                 {!project.github && !project.live ? (
                   <p className="text-xs text-gray-500 mt-4">
-                    (Code/demo link not available)
+                    
                   </p>
                 ) : null}
               </div>
