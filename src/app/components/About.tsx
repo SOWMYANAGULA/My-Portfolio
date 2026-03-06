@@ -20,7 +20,7 @@ export const About = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             About Me
           </h2>
-          <div className="w-20 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-fuchsia-500 mx-auto rounded-full"></div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -43,7 +43,7 @@ export const About = () => {
 
             <p>
               Currently at{" "}
-              <span className="font-semibold text-indigo-400">Wells Fargo</span>, I design and
+              <span className="font-semibold text-fuchsia-500">Wells Fargo</span>, I design and
               develop cloud-native microservices using Java, Python, and Spring Boot, focusing on
               distributed systems, high availability, performance optimization, and secure
               architectures.
@@ -91,13 +91,13 @@ export const About = () => {
                 icon: CloudCog,
                 title: "Cloud & DevOps",
                 desc: "AWS, Azure, Docker, Kubernetes, CI/CD",
-                color: "text-amber-400",
+                color: "text-red-400",
               },
               {
                 icon: BookOpen,
                 title: "Publication",
                 desc: "Instant AR Converter Tool (Scopus) — GLTF (Android) & USDZ (iOS)",
-                color: "text-purple-400",
+                color: "text-yellow-400",
               },
               {
                 icon: Palette,

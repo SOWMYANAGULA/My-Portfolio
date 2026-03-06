@@ -28,7 +28,7 @@ export const Experience = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Experience & Publication
           </h2>
-          <div className="w-20 h-1 bg-indigo-500 mx-auto rounded-full mb-6"></div>
+          <div className="w-20 h-1 bg-fuchsia-500 mx-auto rounded-full mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
             My professional experience and published work so far.
           </p>
@@ -44,13 +44,13 @@ export const Experience = () => {
           >
             <div className="bg-gray-900 p-8 rounded-2xl shadow-xl border border-gray-800 h-full">
               <div className="flex items-center gap-3 mb-4">
-                <Briefcase className="text-indigo-400" />
+                <Briefcase className="text-fuchsia-400" />
                 <h3 className="text-xl font-bold text-white">
                   Software Engineer
                 </h3>
               </div>
 
-              <h4 className="text-lg text-indigo-400 font-medium mb-3">
+              <h4 className="text-lg text-fuchsia-400 font-medium mb-3">
                 Wells Fargo
               </h4>
 
@@ -90,9 +90,9 @@ export const Experience = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-gray-900 p-8 rounded-2xl shadow-xl border border-indigo-700 relative overflow-hidden h-full">
+            <div className="bg-gray-900 p-8 rounded-2xl shadow-xl border border-fuchsia-700 relative overflow-hidden h-full">
               {/* Ribbon Badge */}
-              <div className="absolute top-5 right-[-45px] rotate-45 bg-indigo-600 text-white px-14 py-1 font-bold text-sm shadow-lg">
+              <div className="absolute top-5 right-[-45px] rotate-45 bg-yellow-600 text-white px-14 py-1 font-bold text-sm shadow-lg">
                 Published
               </div>
 
@@ -101,7 +101,7 @@ export const Experience = () => {
                   animate={{ scale: [1, 1.06, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}
                 >
-                  <BookOpen className="text-indigo-400" size={28} />
+                  <BookOpen className="text-fuchsia-400" size={28} />
                 </motion.div>
 
                 <h3 className="text-xl font-bold text-white">
@@ -120,7 +120,7 @@ export const Experience = () => {
               <div className="flex gap-4 flex-wrap">
                 <button
                   onClick={openDetails}
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
+                  className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white px-6 py-3 rounded-xl font-semibold transition-all"
                 >
                   View Publication Details
                 </button>
@@ -173,7 +173,7 @@ export const Experience = () => {
                         <strong>USDZ</strong> (iOS).
                       </p>
 
-                      <div className="bg-indigo-900/40 p-4 rounded-xl mt-4 border border-indigo-700">
+                      <div className="bg-fuchsia-900/40 p-4 rounded-xl mt-4 border border-fuchsia-700">
                         <strong className="text-white">Tools & Tech Used:</strong>
                         <ul className="list-disc list-inside mt-2 space-y-1">
                           <li>JavaScript, Node.js</li>
@@ -191,7 +191,7 @@ export const Experience = () => {
                       Certificate of Publication
                     </h2>
 
-                    {/* ✅ Certificate image display */}
+                    {/*  */}
                     <div className="bg-black/30 border border-gray-800 rounded-xl overflow-hidden">
                       <img
                         src={publicationCert}
@@ -210,7 +210,7 @@ export const Experience = () => {
                 <div className="mt-6 text-right">
                   <button
                     onClick={() => setOpen(false)}
-                    className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
+                    className="bg-fuchsia-600 text-white px-6 py-2 rounded-lg hover:bg-fuchsia-700 transition"
                   >
                     Close
                   </button>

@@ -84,7 +84,7 @@ export const Projects = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Academic Projects
           </h2>
-          <div className="w-20 h-1 bg-indigo-500 mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-fuchsia-500 mx-auto rounded-full mb-6" />
           <p className="text-gray-400 max-w-2xl mx-auto">
             Selected academic projects aligned with my background in software engineering,
             test automation, and applied machine learning.
@@ -117,7 +117,7 @@ export const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-white text-black rounded-full hover:bg-indigo-500 hover:text-white transition-colors duration-300"
+                      className="p-3 bg-white text-black rounded-full hover:bg-fuchsia-500 hover:text-white transition-colors duration-300"
                       aria-label="GitHub Repository"
                     >
                       <Github size={20} />
@@ -129,7 +129,7 @@ export const Projects = () => {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-white text-black rounded-full hover:bg-indigo-500 hover:text-white transition-colors duration-300"
+                      className="p-3 bg-white text-black rounded-full hover:bg-fuchsia-500 hover:text-white transition-colors duration-300"
                       aria-label="Live Demo"
                     >
                       <ExternalLink size={20} />
@@ -199,7 +199,7 @@ export const Projects = () => {
             href="https://github.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-indigo-400 font-semibold hover:text-indigo-300 transition-colors"
+            className="inline-flex items-center text-fuchsia-400 font-semibold hover:text-fuchsia-300 transition-colors"
           >
             See more on GitHub
             <Github size={16} className="ml-2" />

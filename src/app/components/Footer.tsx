@@ -35,7 +35,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-gray-400 hover:text-indigo-400 transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.7)]"
+              className="text-gray-400 hover:text-fuchsia-400 transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.7)]"
             >
               <Github size={24} />
             </motion.a>
@@ -45,7 +45,7 @@ export const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2 }}
-              className="text-gray-400 hover:text-indigo-400 transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.7)]"
+              className="text-gray-400 hover:text-fuchsia-400 transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.7)]"
             >
               <Linkedin size={24} />
             </motion.a>
@@ -53,7 +53,7 @@ export const Footer = () => {
             <motion.a
               href="mailto:nagulasowmya5@gmail.com"
               whileHover={{ scale: 1.2 }}
-              className="text-gray-400 hover:text-indigo-400 transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.7)]"
+              className="text-gray-400 hover:text-fuchsia-400 transition-all duration-300 hover:drop-shadow-[0_0_10px_rgba(99,102,241,0.7)]"
             >
               <Mail size={24} />
             </motion.a>

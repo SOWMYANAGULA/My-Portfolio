@@ -8,42 +8,30 @@ export const Hero = () => {
   const isInView = useInView(ref, { once: true });
 
   /* ---------------- Typing Setup ---------------- */
-  const nameText = "Hi, I'm Sowmya Nagula.";
-  const welcomeText = "Welcome to my portfolio.";
+  // We only type the ROLE line like your screenshot
+  const roleText = "Experienced Software Engineer";
   const typingSpeed = 40;
 
-  const [typedName, setTypedName] = useState("");
-  const [typedWelcome, setTypedWelcome] = useState("");
+  const [typedRole, setTypedRole] = useState("");
   const [showSubtitle, setShowSubtitle] = useState(false);
 
   /* ---------------- Typing Animation ---------------- */
   useEffect(() => {
     if (!isInView) return;
 
-    let nameIndex = 0;
+    let roleIndex = 0;
 
-    const typeName = setInterval(() => {
-      nameIndex++;
-      setTypedName(nameText.slice(0, nameIndex));
-      if (nameIndex >= nameText.length) {
-        clearInterval(typeName);
+    const typeRole = setInterval(() => {
+      roleIndex++;
+      setTypedRole(roleText.slice(0, roleIndex));
 
-        setTimeout(() => {
-          let welcomeIndex = 0;
-
-          const typeWelcome = setInterval(() => {
-            welcomeIndex++;
-            setTypedWelcome(welcomeText.slice(0, welcomeIndex));
-            if (welcomeIndex >= welcomeText.length) {
-              clearInterval(typeWelcome);
-              setShowSubtitle(true);
-            }
-          }, typingSpeed);
-        }, 500);
+      if (roleIndex >= roleText.length) {
+        clearInterval(typeRole);
+        setShowSubtitle(true);
       }
     }, typingSpeed);
 
-    return () => clearInterval(typeName);
+    return () => clearInterval(typeRole);
   }, [isInView]);
 
   const scrollToContact = () => {
@@ -63,47 +51,57 @@ export const Hero = () => {
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
         {/* LEFT SIDE */}
         <div className="flex-1 text-center md:text-left">
-          {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight min-h-[180px]">
-            {/* Name Typing */}
-            <div className="relative inline-block">
-              <span className="text-white">Hi, I'm </span>
-              <span className="text-white">
-                {typedName.replace("Hi, I'm ", "")}
-              </span>
+          {/* Small top text */}
+          <p className="text-xl tracking-[0.2em] text-white uppercase mb-3">
+            HELLO, I’M
+          </p>
 
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-                className="inline-block ml-1 w-[3px] h-8 md:h-12 bg-fuchsia-500 align-middle rounded"
-              />
-            </div>
-
-            {/* Welcome Typing */}
-            <div className="mt-2 text-white drop-shadow-[0_0_10px_rgba(236,72,153,0.25)]">
-              {typedWelcome}
-            </div>
+          {/* Name */}
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
+            <span className="text-fuchsia-500">Sowmya</span>{" "}
+            <span className="text-white">Nagula</span>
           </h1>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
+          {/* Role line (typed) */}
+          <div className="mt-3 text-2xl md:text-4xl font-bold text-fuchsia-500 flex items-center justify-center md:justify-start">
+            <span>{typedRole}</span>
+
+            {/* Cursor */}
+            <motion.span
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 0.8, repeat: Infinity }}
+              className="inline-block ml-2 w-[3px] h-6 md:h-9 bg-fuchsia-500 align-middle rounded"
+            />
+          </div>
+
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
             animate={showSubtitle ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-xl text-gray-300 mt-6 max-w-lg mx-auto md:mx-0"
+            className="mt-6 text-gray-300 max-w-xl mx-auto md:mx-0 leading-relaxed space-y-3"
           >
-            Software Engineer | Full-Stack Developer | React, TypeScript, Java,
-            Python | Building scalable web and cloud-native applications
-          </motion.p>
+            <p>
+              Full-Stack Software Engineer building scalable web platforms, 
+              cloud-native services, and modern user experiences.
+
+            </p>
+            <p>
+              Focused on React, TypeScript, Java, Python, and cloud 
+              technologies to deliver reliable and high-performance applications.
+            </p>
+          </motion.div>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-10">
+            {}
             <a
-              href="#experience"
-              className="px-8 py-4 bg-fuchsia-600 text-white rounded-lg font-semibold shadow-[0_0_18px_rgba(236,72,153,0.22)] hover:shadow-[0_0_26px_rgba(236,72,153,0.35)] hover:bg-fuchsia-700 transition"
-            >
-              View My Work
-            </a>
+   href={`${import.meta.env.BASE_URL}resume.pdf`}
+  download="Sowmya_Nagula_Resume.pdf"
+  className="px-8 py-4 bg-fuchsia-500 text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition"
+>
+  Download Resume
+</a>
 
             <button
               onClick={scrollToContact}
@@ -142,7 +140,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE IMAGE (COLOR + HEAD NOT CUT) */}
+        {/* RIGHT SIDE IMAGE */}
         <div className="flex-1 flex justify-center md:justify-end">
           <div className="relative w-[320px] h-[320px] md:w-[480px] md:h-[480px]">
             {/* outer ring */}
@@ -156,9 +154,7 @@ export const Hero = () => {
               <img
                 src={animeAvatar}
                 alt="Sowmya Nagula"
-                // ✅ removed grayscale
-                // ✅ moved focus upward so head doesn't cut
-                className="w-full h-full object-cover object-[50%_20%]"
+                className="w-full h-full object-cover object-[50%_18%]"
               />
             </div>
 
@@ -172,7 +168,7 @@ export const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 3 }}
+        transition={{ delay: 2 }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
       >
         <ArrowDown className="text-gray-500" />

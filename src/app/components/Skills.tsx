@@ -11,7 +11,6 @@ const skills = [
       "JavaScript",
       "HTML",
       "CSS",
-      "Tailwind CSS",
       "Component-based UI Architecture",
       "State Management",
       "Routing",
@@ -31,6 +30,7 @@ const skills = [
       "RESTful APIs",
       "Microservices Architecture",
       "Distributed Systems",
+      "System Design",
       "High Availability Services",
     ],
   },
@@ -68,13 +68,15 @@ const skills = [
     ],
   },
   {
-    category: "Mobile & Android (Fundamentals)",
+    category: "AI/ML & GenAI",
     items: [
-      "Kotlin",
-      "Android Development Fundamentals",
-      "Android Architecture Patterns",
-      "Jetpack Components",
-      "Mobile Performance & UX Optimization",
+      "Large Language Models (LLMs)",
+      "Prompt Engineering",
+      "Model Evaluation",
+      "Natural Language Processing (NLP)",
+      "Conversational AI systems",
+      "Machine Learning pipelines",
+      "AI system monitoring",
     ],
   },
   {
@@ -108,7 +110,7 @@ export const Skills = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Technical Skills
           </h2>
-          <div className="w-20 h-1 bg-indigo-500 mx-auto rounded-full mb-6"></div>
+          <div className="w-20 h-1 bg-fuchsia-500 mx-auto rounded-full mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A comprehensive list of the technologies I work with.
           </p>
@@ -154,7 +156,7 @@ export const Skills = () => {
                     whileHover={{ x: 5 }}
                     className="flex items-center text-gray-300"
                   >
-                    <CheckCircle className="w-4 h-4 text-indigo-400 mr-2 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-fuchsia-400 mr-2 flex-shrink-0" />
                     <span>{skill}</span>
                   </motion.li>
                 ))}

@@ -6,6 +6,7 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experience & Publication", href: "#experience" },
+  { name: "Internships", href: "#internship" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -49,7 +50,7 @@ export const Navbar = () => {
       {/* Scroll Progress Bar */}
       <motion.div
         style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 origin-left z-[60]"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 origin-left z-[60]"
       />
 
       <motion.nav
@@ -71,7 +72,7 @@ export const Navbar = () => {
             href="#"
             animate={{ scale: scrolled ? 0.9 : 1 }}
             transition={{ duration: 0.3 }}
-            className="text-2xl font-bold tracking-tight bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent" >
+            className="text-2xl font-bold tracking-tight bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 bg-clip-text text-transparent" >
             Sowmya Nagula
           </motion.a>
 
@@ -84,8 +85,8 @@ export const Navbar = () => {
                 whileHover={{ y: -2 }}
                 className={`relative font-medium transition-all duration-300 ${
                   active === link.href
-                    ? "text-indigo-400 drop-shadow-[0_0_6px_rgba(99,102,241,0.8)]"
-                    : "text-gray-300 hover:text-indigo-400"
+                    ? "text-fuchsia-400 drop-shadow-[0_0_6px_rgba(99,102,241,0.8)]"
+                    : "text-gray-300 hover:text-fuchsia-400"
                 }`}
               >
                 {link.name}
@@ -94,7 +95,7 @@ export const Navbar = () => {
                 {active === link.href && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-[3px] bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 rounded-full"
                   />
                 )}
               </motion.a>
@@ -125,7 +126,7 @@ export const Navbar = () => {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-gray-300 hover:text-indigo-400 font-medium text-lg transition"
+                    className="text-gray-300 hover:text-fuchsia-400 font-medium text-lg transition"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}

@@ -103,7 +103,7 @@ export const Contact = () => {
         {/* Title */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <div className="w-20 h-1 bg-indigo-500 mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-fuchsia-500 mx-auto rounded-full" />
           <p className="text-gray-400 max-w-2xl mx-auto mt-6">
             I'm currently looking for new opportunities. Whether you have a
             question or just want to say hi, I'll try my best to get back to you!
@@ -114,7 +114,7 @@ export const Contact = () => {
           {/* LEFT SIDE */}
           <div className="md:w-1/3 space-y-8">
             <div className="flex items-start space-x-4">
-              <div className="bg-indigo-600 p-3 rounded-lg text-white">
+              <div className="bg-fuchsia-600 p-3 rounded-lg text-white">
                 <Mail size={22} />
               </div>
               <div>
@@ -124,7 +124,7 @@ export const Contact = () => {
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="bg-indigo-600 p-3 rounded-lg text-white">
+              <div className="bg-fuchsia-600 p-3 rounded-lg text-white">
                 <MapPin size={22} />
               </div>
               <div>
@@ -142,7 +142,7 @@ export const Contact = () => {
                 name="user_name"
                 required
                 placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-fuchsia-500 outline-none transition"
               />
 
               <input
@@ -150,7 +150,7 @@ export const Contact = () => {
                 name="user_email"
                 required
                 placeholder="Your Email"
-                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-fuchsia-500 outline-none transition"
               />
 
               {/* ✅ Many EmailJS templates expect reply_to */}
@@ -161,7 +161,7 @@ export const Contact = () => {
                 name="subject"
                 required
                 placeholder="Subject"
-                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-fuchsia-500 outline-none transition"
               />
 
               <textarea
@@ -169,7 +169,7 @@ export const Contact = () => {
                 rows={4}
                 required
                 placeholder="Your Message..."
-                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-indigo-500 outline-none transition resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-fuchsia-500 outline-none transition resize-none"
               />
 
               <motion.button
@@ -177,7 +177,7 @@ export const Contact = () => {
                 whileTap={{ scale: 0.95 }}
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-70 text-white font-semibold rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all"
+                className="w-full py-4 bg-fuchsia-600 hover:bg-fuchsia-700 disabled:opacity-70 text-white font-semibold rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all"
               >
                 {status === "loading" ? (
                   <>
